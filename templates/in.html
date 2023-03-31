@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Stream</title>
+</head>
+<body>
+    <h1>Camera Stream</h1>
+    <img id="video" src="{{ url_for('video_feed') }}" />
+    <button id="capture">Capture</button>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script>
+        var video = document.getElementById('video');
+        var canvas = document.getElementById('canvas');
+        var captureButton = document.getElementById('capture');
+
+        captureButton.addEventListener('click', function() {
+            var context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            var dataURL = canvas.toDataURL('image/png');
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '{{ url_for("save_image") }}', true);
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            xhr.send(JSON.stringify({'image_data': dataURL}));
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- <html>
+<head>
+<title>Doctor_Login</title>
+</head>
+<body>
+    <h1 align=center>Keep Your Face indide the frame</h1>
+</body>
+</html> -->
