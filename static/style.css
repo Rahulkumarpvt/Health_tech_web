@@ -1,0 +1,62 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 50%;
+    width: 50%;
+}
+
+#camera--output {
+    border-radius: 80px;
+    position: fixed;
+    left: 30%;
+    top: 12%;
+    height: 15%;
+    width: 7%;
+    object-fit: initial;
+}
+
+#camera--view,
+#camera--sensor,
+#camera--output {
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+#camera,
+#camera--view,
+#camera--sensor {
+    border: solid 3px #000000;
+    border-radius: 80px;
+    position: fixed;
+    left: 30%;
+    top: 12%;
+    height: 70%;
+    width: 40%;
+    object-fit: initial;
+}
+
+.taken {
+    height: 100px !important;
+    width: 100px !important;
+    transition: all 0.5s ease-in;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+#camera--trigger {
+    width: 200px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 30px;
+    left: calc(50% - 100px);
+}
