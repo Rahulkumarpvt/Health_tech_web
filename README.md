@@ -5,6 +5,6 @@ This project is a web-based platform that enables doctors, patients, and labs to
 ## Features
 The following are the main features of the platform:
 
-Doctor Dashboard: Allows doctors to view and manage the health reports of their patients, and generate reports based on specific criteria.
+Doctor Dashboard: Allows doctors to view and manage the health reports of their patients, and generate reports based on specific criteria.  
 Patient Dashboard: Allows patients to view their own health reports, download them , share them with their doctors and also be able to add family members.  
 Lab Dashboard: Allows labs to upload health reports of patients, manage them, and notify the patients when reports are ready.
